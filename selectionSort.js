@@ -1,3 +1,6 @@
+//Selection Sort Algorithm
+//O(N^2)
+
 var array = createRandomArray();
 
 console.log("Starting array");
