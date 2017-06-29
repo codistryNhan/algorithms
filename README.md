@@ -1,3 +1,1 @@
-# algorithms
-
-Practice Data Structures & Algorithms
+This repo contains algorithms to study from.
