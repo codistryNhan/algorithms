@@ -40,28 +40,33 @@ function LinkedList(){
     let current = head;
     let previous, removedKey;
 
+    //If list is empty
     if(head == null){
       console.log("List is already empty");
-    } else {
-      while(current){
-
-        previous = current;
-
-        if(current.key == key){
-          previous.next = current.next;
-          current = current.next
-          length--;
-        } else {
-          console.log("Key Not Found");
-          return;
-        }
-
-
-      }
+      return;
     }
 
+    //If key is on first node
+    if(current.key == key){
+      head = current.next;
+    } else {
+      while(current.next){
+        previous = current;
+        current = current.next;
+
+        if(key == current.key){
+
+          if(current.next == null){
+            previous.next = null;
+          }
+
+          previous.next = current.next;
+        }
+      }
+    }
   }
 
+  //Prints out keys in the LinkedList
   this.print = function(){
     let current = head;
 
@@ -69,6 +74,7 @@ function LinkedList(){
       console.log("Empty List");
     } else {
 
+      console.log("Array:");
       while(current){
         console.log(current.key + " ");
         current = current.next;
@@ -87,5 +93,8 @@ list.insert(2);
 list.insert(3);
 list.insert(1)
 list.print();
+list.remove(3);
+list.print();
+list.remove(1);
 list.remove(1);
 list.print();
